@@ -5,9 +5,11 @@ RUN pacman --noconfirm -Syu && \
     pacman --noconfirm -S \
     git \
     gcc \
+    npm \
     sudo \
     wget \
     make \
+    yosys \
     unzip \
     which \
     ctags \
@@ -30,6 +32,8 @@ RUN pip install \
     pylance \
     numpy \
     opencv-python
+
+RUN npm install -g netlistsvg
 
 # Install Verible.
 ARG VERIBLE_URL="https://github.com/chipsalliance/verible/releases/download/v0.0-3051-ga1534abb/verible-v0.0-3051-ga1534abb-Ubuntu-22.04-jammy-x86_64.tar.gz"
