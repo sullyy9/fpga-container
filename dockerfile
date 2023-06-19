@@ -18,11 +18,10 @@ RUN pacman --noconfirm -Syu && \
     openocd \
     gtkwave \
     usbutils \
-    iverilog \
     verilator && \
     pacman --noconfirm -Scc
 
-RUN pip install \
+RUN pip install --break-system-packages \
     teroshdl \
     cocotb \
     cocotb-test \
@@ -32,11 +31,6 @@ RUN pip install \
     pylance \
     numpy \
     opencv-python
-
-RUN git clone https://github.com/TerosTechnology/netlistsvg && \
-    cd netlistsvg && \
-    npm install --force && \
-    npm install -g
 
 # Install Verible.
 ARG VERIBLE_URL="https://github.com/chipsalliance/verible/releases/download/v0.0-3051-ga1534abb/verible-v0.0-3051-ga1534abb-Ubuntu-22.04-jammy-x86_64.tar.gz"
